@@ -27,3 +27,11 @@ border. */
 section#contact-info p:last-of-type {
   border-right: none;
 }
+
+h1:hover {
+  color: green;
+}
+
+.job li {
+  color: blue;
+}
