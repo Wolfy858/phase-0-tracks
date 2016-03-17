@@ -1,5 +1,5 @@
 body {
-  width: 960px;
+  max-width: 960px;
 }
 
 blockquote {
@@ -19,7 +19,8 @@ cite {
 }
 
 #external-links {
-  width: 200px;
+  width: 20%;
+  min-width: 100px;
   display: inline-block;
   vertical-align: top;
 }
@@ -45,3 +46,22 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 685px) {
+  h1 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    width: 100%;
+  }
+}
+
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
