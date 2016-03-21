@@ -1,0 +1,23 @@
+Elevator-use algorithm:
+1. Ask human for input on destination floor.
+2. record whether destination floor is up/down relative to current
+floor.
+3. Until destination floor is reached, do the following:
+  -Ascend/Descend 1 floor depending on record from step (2)
+  -Check whether anyone has called the elevator at current floor
+  -If so, stop, open doors, and let them board. If not, proceed up/down
+  -If new passangers select intermediary floors, mark them
+  for stopping on the way to original destination floor
+4. Arrive at destination floor and open doors to release passengers
+
+Human-behavior algorithm - finding a solution for a problem
+while coding.
+
+1. Visit Google.com and input search terms for question
+2. Scan first search result (usually Stack Overflow) for
+relevant information
+3. If suitable solution is found, celebrate and continue coding
+If no solution is found, return to google
+4. Repeat steps 2 and 3, for several subsequent search results
+5. after about 5 failed attempts, rephrase search query with new
+wording and try again from step 1.
