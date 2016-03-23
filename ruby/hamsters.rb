@@ -13,3 +13,9 @@ if age == ""
 else
   age = age.to_i
 end
+
+puts "Your hamster's name is #{name}"
+puts "Your hamster's volume is #{volume_level} on a scale of 1-10"
+puts "Your hamster's fur color is #{fur_color}"
+puts "Your hamster #{adoptable ? 'is' : 'isn\'t' } a good candidate for adoption."
+puts "Your hamster's estimated age is #{age.nil? ? 'unknown' : age}"
