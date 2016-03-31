@@ -52,3 +52,25 @@ teams.each do |city, team|
     downcased_teams[city.downcase] = team.downcase
 end
 puts downcased_teams
+
+numbers = [1, 2 ,3 , 4, 5]
+# numbers.reject! { |num| num.even? }
+p numbers
+capitals = {
+  "California" => "Sacramento",
+  "Florida" => "Tallahassee",
+  "Texas" => "Austin",
+  }
+# capitals.reject! { |state, city| city.start_with?("T") }
+p capitals
+
+# numbers.select! {|num| num.even? }
+p numbers
+# capitals.select! {|state, city| city.start_with?("S")}
+p capitals
+
+puts numbers.keep_if {|num| num < 3 }
+puts capitals.keep_if {|state, city| state.length < 6 }
+
+puts numbers.take_while { |num| !(num >= 3)}
+p capitals.take_while { |state, city| !(city.length >= 7)}
