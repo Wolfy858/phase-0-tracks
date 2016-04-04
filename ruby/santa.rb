@@ -1,5 +1,6 @@
 class Santa
-  attr_reader :reindeer_ranking, :age
+  attr_reader :reindeer_ranking, :gender, :ethnicity
+  attr_accessor :age
 
 
   def speak
@@ -35,14 +36,6 @@ class Santa
      "
   end
 
-  def gender
-    @gender
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
 end
 #Driver code testing first three instance methods
 s = Santa.new("female", "orcish")
@@ -68,3 +61,11 @@ p s.age
 #Driver code testing getter methods
 p s.gender
 p s.ethnicity
+#Generate many Santas!
+100.times do
+  santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  santa.age = Random.rand(140)
+  p santa.gender
+  p santa.ethnicity
+  p santa.age
+end
