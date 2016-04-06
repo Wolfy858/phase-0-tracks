@@ -6,11 +6,11 @@ attr_reader :powered_on, :inventory
 
 
 #Sets initial values for attributes
-  def initialize
-    @health = 100
-    @damage = 20
+  def initialize(health, damage, powered_on)
+    @health = health
+    @damage = damage
     @inventory = ["laser", "bucket of bolts"]
-    @powered_on = true
+    @powered_on = powered_on
   end
 
   #Fights another robot, only dealing damage if robots are equipped with lasers
@@ -42,5 +42,27 @@ attr_reader :powered_on, :inventory
   def pick_up_item(item)
     @inventory << item
   end
+end
 
+puts "Type any key to spawn a robot, or 'done' to indicate you're finished"
+input = gets.chomp
+robots = []
+while input != 'done'
+  puts "Enter robot's initial health"
+  health = gets.chomp.to_i
+
+  puts "Enter robot's initial damage"
+  damage = gets.chomp.to_i
+
+  puts "Will robot be powered on initially?"
+  powered_on = gets.chomp == "yes" ? true : false
+
+  robots << Robot.new(health, damage, powered_on)
+  puts "Another robot?"
+  input = gets.chomp
+end
+
+robots.each do |robot|
+  puts "This robot has #{robot.health} HP, deals #{robot.damage} damage, and
+  #{robot.powered_on ? 'is' : 'is not'} powered on."
 end
