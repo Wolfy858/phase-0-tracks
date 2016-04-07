@@ -118,5 +118,5 @@ we could pass create_list(food) to add_item_to_list like so: add_item_to_list(cr
 What concepts were solidified in this challenge, and what concepts are still confusing?
 This challenge was solid review of basic method use, and did not leave me feeling confused about much at the end. The only thing I wonder
 about is why we would need two separate methods for add_item_to_list and update_item_from_list, as their code is completely identical. Perhaps
-there was something wrong with our implementations to get this unusual result. 
+there was something wrong with our implementations to get this unusual result.
 =end
