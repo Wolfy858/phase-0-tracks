@@ -90,3 +90,33 @@ add_item_to_list(release_list, "Ice Cream", 4)
 delete_item_from_list(release_list, "Lemonade")
 update_item_from_list(release_list, "Ice Cream", 1)
 pretty_list(release_list)
+
+=begin
+What did you learn about pseudocode from working on this challenge?
+-This challenge reinforced my previous experiences with pseudocoding, which left me feeling that
+the practice makes me feel more confused about the coding process than I was prior to attempting
+to pseudocode. I understand that many programmers find it helpful, but all my experiences thus far
+indicate that I learn better by jumping straight into the coding.
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+In my opinion, hashes are superior to arrays for this challenge. The reason is because
+there is no reason within the problem construct for our list to be ordered, which is what arrays are good for.
+Hashes, in contrast, are especially useful for this kind of list, because they allow the food items to be stored
+as keys, and the quantities for those items to be stored as values.
+
+What does a method return?
+A method implicitly returns whatever the last line of code contained in it evaluates to. Alternatively, it returns whatever
+is specified by a return statement.
+
+What kind of things can you pass into methods as arguments?
+Any datatype or object can be passed into methods as arugments. Even sections of code (blocks) can be passed into methods.
+
+How can you pass information between methods?
+You can pass the result evaluated from one method call by passing it in as an argument to another method. To use an example from this assignment,
+we could pass create_list(food) to add_item_to_list like so: add_item_to_list(create_list(food), item, quantity).
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+This challenge was solid review of basic method use, and did not leave me feeling confused about much at the end. The only thing I wonder
+about is why we would need two separate methods for add_item_to_list and update_item_from_list, as their code is completely identical. Perhaps
+there was something wrong with our implementations to get this unusual result. 
+=end
