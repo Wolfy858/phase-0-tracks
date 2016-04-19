@@ -1,0 +1,54 @@
+Query 1:
+sqlite> Select * from tenants;
+Output:
+1|Elliot Wolfe|8580000000|1
+2|David Lardar|6191111111|2
+3|Chelsea Medro|31213333333|2
+4|Hans Libgober|4154444444|3
+5|Peter Markov|4156666666|3
+6|Maribel Lardar|6195555555|2
+sqlite>
+
+Query 2:
+sqlite> UPDATE houses SET vacancy="true" where id="3";
+(No output for this query)
+
+Query 3:
+sqlite> Select * from tenants, houses WHERE tenants.home_id = houses.id;
+Output:
+1|Elliot Wolfe|8580000000|1|1|123 A Street|San Diego|true
+2|David Lardar|6191111111|2|2|456 B Street|Chicago|false
+3|Chelsea Medro|31213333333|2|2|456 B Street|Chicago|false
+4|Hans Libgober|4154444444|3|3|789 C Avenue|San Francisco|true
+5|Peter Markov|4156666666|3|3|789 C Avenue|San Francisco|true
+6|Maribel Lardar|6195555555|2|2|456 B Street|Chicago|false
+
+Query 4:
+sqlite> SELECT tenants.name, tenants.phone_number, houses.address FROM tenants JOIN houses ON tenants.home_id = houses.id WHERE houses.id = 2;
+Output:
+David Lardar|6191111111|456 B Street
+Chelsea Medro|31213333333|456 B Street
+Maribel Lardar|6195555555|456 B Street
+
+Query 5:
+DELETE FROM tenants WHERE name="Chelsea Medro";
+(No output for this query)
+
+JOINS: SQLite only supports left outer joins and inner joins. Here is an example of an inner join:, and the results:
+sqlite> Select * from houses JOIN tenants ON houses.id = tenants.home_id;
+Output:
+1|123 A Street|San Diego|true|1|Elliot Wolfe|8580000000|1
+2|456 B Street|Chicago|false|2|David Lardar|6191111111|2
+3|789 C Avenue|San Francisco|true|4|Hans Libgober|4154444444|3
+3|789 C Avenue|San Francisco|true|5|Peter Markov|4156666666|3
+2|456 B Street|Chicago|false|6|Maribel Lardar|6195555555|2
+
+Here is an example of an outer join, which returns all rows in the leftmost table regardless of whether or not there was a match with the right table
+sqlite> Select * from houses LEFT JOIN tenants ON houses.id = tenants.home_id;
+Output:
+1|123 A Street|San Diego|true|1|Elliot Wolfe|8580000000|1
+2|456 B Street|Chicago|false|2|David Lardar|6191111111|2
+2|456 B Street|Chicago|false|6|Maribel Lardar|6195555555|2
+3|789 C Avenue|San Francisco|true|4|Hans Libgober|4154444444|3
+3|789 C Avenue|San Francisco|true|5|Peter Markov|4156666666|3
+4|12 Grimauld Place|London|false||||
