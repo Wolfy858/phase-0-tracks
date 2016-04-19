@@ -46,7 +46,7 @@ loop do
   when "complete task"
     puts "Enter a task to complete"
     complete_task(db, gets.chomp)
-  when "display_tasks"
+  when "display tasks"
     display_tasks(db)
   when "exit"
     break
