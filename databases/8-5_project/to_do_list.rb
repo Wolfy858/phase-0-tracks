@@ -26,11 +26,32 @@ def complete_task(db, task)
   db.execute("UPDATE tasks SET completed=1 WHERE task='#{task}'")
 end
 
-create_task(db, "Get a haircut")
-create_task(db, "Do laundry")
+# create_task(db, "Get a haircut")
+# create_task(db, "Do laundry")
+#
+# complete_task(db, "Do laundry")
+#
+# p db.execute("SELECT * FROM tasks")
+#
+# display_tasks(db)
 
-complete_task(db, "Do laundry")
 
-p db.execute("SELECT * FROM tasks")
-
-display_tasks(db)
+loop do
+  puts "What would you like to do? (add task, complete task, display tasks, exit)"
+  input = gets.chomp
+  case input
+  when "add task"
+    puts "Enter a task description to add to the database"
+    create_task(db, gets.chomp)
+  when "complete task"
+    puts "Enter a task to complete"
+    complete_task(db, gets.chomp)
+  when "display_tasks"
+    display_tasks(db)
+  when "exit"
+    break
+  else
+    puts "Sorry, I didn't understand that"
+    redo
+  end
+end
