@@ -51,23 +51,17 @@ def get_worker_id(db, worker_name)
   db.execute("SELECT id FROM workers WHERE name=(?) LIMIT 1", worker_name)[0][0]
 end
 
-# create_task(db, "Get a haircut")
-# create_task(db, "Do laundry")
-# register_worker(db, "Elliot Wolfe")
-assign_task(db, "Do laundry", "Elliot Wolfe")
-task = db.execute("SELECT * FROM TASKS LIMIT 1")
-p task
-display_tasks(db)
-#
-# complete_task(db, "Do laundry")
-p get_worker_id(db, "Elliot Wolfe")
-p db.execute("SELECT * FROM tasks")
-#
-# display_tasks(db)
+def display_worker_tasks(db, worker_name)
+  worker_task_arrays = db.execute("SELECT * FROM workers JOIN tasks ON workers.id = tasks.worker_id WHERE name= (?)", worker_name)
+  puts "#{worker_name} has the following tasks:"
+  worker_task_arrays.each do |array|
+    puts array[3]
+  end
+end
 
 
 loop do
-  puts "What would you like to do? (add task, complete task, display tasks, register worker, assign task, exit)"
+  puts "What would you like to do? (add task, complete task, display tasks, register worker, assign task, display worker's tasks, or exit)"
   input = gets.chomp
   case input
   when "add task"
@@ -86,6 +80,9 @@ loop do
     task = gets.chomp
     puts "Specify a worker to be assigned the task"
     assign_task(db, task, gets.chomp)
+  when "display worker's tasks"
+    puts "Select a worker to display their tasks"
+    display_worker_tasks(db, gets.chomp)
   when "exit"
     break
   else
