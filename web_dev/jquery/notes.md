@@ -1,0 +1,4 @@
+My plan for tackling jQuery is to just search around the internet for useful sites / cheat sheets online that provide tutorials or explanations of how to use it. What else could I do? Codecademy has some useful lessons that I plan to take, and there has to be loads of useful information on specific jQuery methods and syntax that would all be returned by a simple Google search. That's all there is to my 'plan' for tackling jQuery. Here I go!
+
+
+Having completed my research and project, I found that the above strategy was very effective. Codecademy proved to be an invaluable resource for learning basic jQuery syntax, and I found another site learn.jquery.com that also provided loads of useful information. Between the two of them, I was able to implement several jQuery features in my existing website. 
