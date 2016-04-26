@@ -1,0 +1,53 @@
+body {
+  background: blue;
+}
+
+h1 {
+  font-family: Helvetica;
+  color: red;
+  background-image: url("images/space2.jpg");
+  border-radius: 10px;
+  padding: 5px;
+}
+
+table {
+  padding: 7px;
+  border: 2px solid red;
+  border-radius: 1px;
+}
+
+#movie-list {
+  background-color: purple;
+  border: 2px dashed red;
+  border-radius: 5px;
+  margin: 10px;
+  display: inline-table;
+}
+
+footer, header {
+  text-align: center;
+  background-color: green;
+}
+
+.other-lists {
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  display: inline-table;
+}
+
+a:visited {
+  color: orange;
+}
+
+button {
+  float: right;
+}
+
+@media screen and (max-width: 750px) {
+  img {
+    display: block;
+    width: 80%
+  }
+}
